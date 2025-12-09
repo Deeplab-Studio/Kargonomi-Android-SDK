@@ -174,9 +174,24 @@ Kargonomi.Shipments.create(req)
 **Kotlin**
 ```kotlin  
 val req = CreateShipmentRequest().apply {  
- shipment.sender_name = "Test Sender" shipment.sender_email = "test@example.com" shipment.sender_phone = "5555555555" shipment.sender_address = "Test Address" shipment.sender_state_id = "34" shipment.sender_city_id = "828"  
- shipment.buyer_name = "Test Buyer" shipment.buyer_phone = "5555555555" shipment.buyer_address = "Buyer Street XYZ" shipment.buyer_state_id = "66" shipment.buyer_city_id = "662" shipment.buyer_email = "buyer@example.com"  
- shipment.packages = listOf( CreateShipmentRequest.PackageItem().apply { content = "Mini Mesh" desi = "1" } )}  
+ shipment.sender_name = "Test Sender" 
+ shipment.sender_email = "test@example.com" 
+ shipment.sender_phone = "5555555555" 
+ shipment.sender_address = "Test Address" 
+ shipment.sender_state_id = "34" 
+ shipment.sender_city_id = "828"  
+ shipment.buyer_name = "Test Buyer" 
+ shipment.buyer_phone = "5555555555" 
+ shipment.buyer_address = "Buyer Street XYZ" 
+ shipment.buyer_state_id = "66" 
+ shipment.buyer_city_id = "662" 
+ shipment.buyer_email = "buyer@example.com"  
+ shipment.packages = listOf(
+ 	CreateShipmentRequest.PackageItem().apply { 
+ 		content = "Mini Mesh" desi = "1" 
+ 		} 
+ 	)
+ }  
   
 Kargonomi.Shipments.create(req)  
  .onSuccess { result -> println("Created: $result") } .onError { err -> println("ERROR: ${err.message}") }  
@@ -188,12 +203,53 @@ Kargonomi.Shipments.create(req)
 
 **Java**
 ```java  
+CreateShipmentRequest req = new CreateShipmentRequest();  
+req.shipment.sender_name = "Test Sender";  
+req.shipment.sender_email = "test@example.com";  
+req.shipment.sender_phone = "5555555555";  
+req.shipment.sender_address = "Test Address";  
+req.shipment.sender_state_id = "34";  
+req.shipment.sender_city_id = "828";  
+  
+req.shipment.buyer_name = "Test Buyer";  
+req.shipment.buyer_phone = "5555555555";  
+req.shipment.buyer_address = "Buyer Street XYZ";  
+req.shipment.buyer_state_id = "66";  
+req.shipment.buyer_city_id = "662";  
+req.shipment.buyer_email = "buyer@example.com";  
+  
+CreateShipmentRequest.PackageItem item = new CreateShipmentRequest.PackageItem();  
+item.content = "Mini Mesh";  
+item.desi = "1";  
+  
+req.shipment.packages = List.of(item);  
+
 Kargonomi.Shipments.update("123456789", req)  
  .onSuccess(detail -> System.out.println("Updated: " + detail)) .onError(err -> err.printStackTrace());  
 ```  
 
 **Kotlin**
-```kotlin  
+```kotlin 
+val req = CreateShipmentRequest().apply {  
+ shipment.sender_name = "Test Sender" 
+ shipment.sender_email = "test@example.com" 
+ shipment.sender_phone = "5555555555" 
+ shipment.sender_address = "Test Address" 
+ shipment.sender_state_id = "34" 
+ shipment.sender_city_id = "828"  
+ shipment.buyer_name = "Test Buyer" 
+ shipment.buyer_phone = "5555555555" 
+ shipment.buyer_address = "Buyer Street XYZ" 
+ shipment.buyer_state_id = "66" 
+ shipment.buyer_city_id = "662" 
+ shipment.buyer_email = "buyer@example.com"  
+ shipment.packages = listOf(
+ 	CreateShipmentRequest.PackageItem().apply { 
+ 		content = "Mini Mesh" desi = "1" 
+ 		} 
+ 	)
+ }
+
 Kargonomi.Shipments.update("123456789", req)  
  .onSuccess { detail -> println("Updated: $detail") } .onError { err -> err.printStackTrace() }  
 ```  
