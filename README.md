@@ -1,6 +1,7 @@
-
-
 # Kargonomi Android SDK (Unofficial)
+
+[![Sponsor](https://img.shields.io/badge/Sponsor-uguraltinsoy-ea4aaa?style=for-the-badge&logo=github-sponsors)](https://github.com/sponsors/uguraltinsoy)
+
 ⚠️ **Warning:** This project is **not an official SDK**. It has been developed by Deeplab Studio to help developers easily integrate with Kargonomi APIs. SDK functionalities are based on the [Kargonomi API documentation](https://www.kargonomi.com.tr/help/api-dokumantasyonu/kargonomi-api/). Deeplab Studio is **not responsible** for any issues that may arise during usage.
   
 ---  
